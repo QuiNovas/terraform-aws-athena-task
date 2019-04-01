@@ -1,23 +1,7 @@
 data "aws_iam_policy_document" "athena_task" {
   statement {
     actions = [
-      "athena:BatchGetQueryExecution",
-      "athena:CancelQueryExecution",
-      "athena:GetCatalogs",
-      "athena:GetExecutionEngine",
-      "athena:GetExecutionEngines",
-      "athena:GetNamespace",
-      "athena:GetNamespaces",
-      "athena:GetQueryExecution",
-      "athena:GetQueryExecutions",
-      "athena:GetQueryResults",
-      "athena:GetQueryResultsStream",
-      "athena:GetTable",
-      "athena:GetTables",
-      "athena:ListQueryExecutions",
-      "athena:RunQuery",
-      "athena:StartQueryExecution",
-      "athena:StopQueryExecution",
+      "athena:*",
       "glue:GetTable",
       "glue:GetPartitions",
     ]

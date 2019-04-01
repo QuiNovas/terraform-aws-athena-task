@@ -14,7 +14,7 @@ module "athena_task" {
 
   policy_arns = [
     "${aws_iam_policy.athena_task.arn}",
-    "${var.datalake_policy_arn}",
+    "${var.athena_datasource_policy_arn}",
   ]
 
   policy_arns_count = 2
