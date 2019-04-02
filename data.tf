@@ -1,7 +1,23 @@
 data "aws_iam_policy_document" "athena_task" {
   statement {
     actions = [
-      "athena:*",
+      "athena:StopQueryExecution",
+      "athena:StartQueryExecution",
+      "athena:RunQuery",
+      "athena:ListQueryExecutions",
+      "athena:GetTables",
+      "athena:GetTable",
+      "athena:GetQueryResultsStream",
+      "athena:GetQueryResults",
+      "athena:GetQueryExecutions",
+      "athena:GetQueryExecution",
+      "athena:GetNamespaces",
+      "athena:GetNamespace",
+      "athena:GetExecutionEngines",
+      "athena:GetExecutionEngine",
+      "athena:GetCatalogs",
+      "athena:CancelQueryExecution",
+      "athena:BatchGetQueryExecution",
       "glue:GetTable",
       "glue:GetPartitions",
     ]
@@ -20,7 +36,7 @@ data "aws_iam_policy_document" "athena_task" {
       "s3:ListBucket",
       "s3:ListBucketMultipartUploads",
       "s3:ListMultipartUploadParts",
-      "s3:PutObject"
+      "s3:PutObject",
     ]
 
     resources = [
