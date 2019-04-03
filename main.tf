@@ -10,7 +10,7 @@ module "athena_task" {
   handler         = "function.handler"
   kms_key_arn     = "${var.kms_key_arn}"
   l3_object_key   = "quinovas/athena-task/athena-task-0.0.1.zip"
-  name            = "${var.name_prefix}-athena-task"
+  name            = "${var.name_prefix}athena-task"
 
   policy_arns = [
     "${aws_iam_policy.athena_task.arn}",
@@ -25,6 +25,6 @@ module "athena_task" {
 }
 
 resource "aws_iam_policy" "athena_task" {
-  name   = "${var.name_prefix}-athena-task"
+  name   = "${var.name_prefix}athena-task"
   policy = "${data.aws_iam_policy_document.athena_task.json}"
 }
