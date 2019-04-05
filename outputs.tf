@@ -27,4 +27,3 @@ output "qualified_invoke_arn" {
   description = "The qualified invocation arn of the athena task Lambda function"
   value       = "${module.athena_task.qualified_invoke_arn}"
 }
-

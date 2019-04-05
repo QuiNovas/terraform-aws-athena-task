@@ -47,3 +47,5 @@ data "aws_iam_policy_document" "athena_task" {
     sid = "ReadWriteResultFiles"
   }
 }
+
+data "aws_region" "current" {}
