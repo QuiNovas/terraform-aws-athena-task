@@ -19,7 +19,7 @@ module "athena_task" {
   policy_arns_count = 2
   runtime           = "python3.7"
   source            = "QuiNovas/lambdalambdalambda/aws"
-  timeout           = 30
+  timeout           = 300
   version           = "0.2.0"
 }
 
