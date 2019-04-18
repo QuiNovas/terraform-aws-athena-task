@@ -13,6 +13,12 @@ variable "athena_datasource_policy_arn" {
   type        = "string"
 }
 
+variable "athena_schema_name" {
+  default     = "default"
+  description = "The schema/database name that you wish to query. If not provided, will default to the default schema/database."
+  type        = "string"
+}
+
 variable "aws_athena_region_name" {
   default     = ""
   description = "The AWS region for Athena that this function should use. Defaults to the region that the function is executing in."
