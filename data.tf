@@ -18,8 +18,9 @@ data "aws_iam_policy_document" "athena_task" {
       "athena:GetCatalogs",
       "athena:CancelQueryExecution",
       "athena:BatchGetQueryExecution",
-      "glue:GetTable",
-      "glue:GetPartitions",
+      "glue:*Database*",
+      "glue:*Table*",
+      "glue:*Partition*",
     ]
 
     resources = [
