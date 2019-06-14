@@ -47,6 +47,7 @@ data "aws_iam_policy_document" "athena_task" {
 
   statement {
     actions   = [
+      "s3:GetBucketLocation",
       "s3:ListBucket*",
     ]
 
