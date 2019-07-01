@@ -1,6 +1,6 @@
 data "aws_iam_policy_document" "athena_task" {
   statement {
-    actions   = [
+    actions = [
       "athena:StopQueryExecution",
       "athena:StartQueryExecution",
       "athena:RunQuery",
@@ -27,11 +27,11 @@ data "aws_iam_policy_document" "athena_task" {
       "*",
     ]
 
-    sid       = "AllowAthenaAccess"
+    sid = "AllowAthenaAccess"
   }
 
   statement {
-    actions   = [
+    actions = [
       "s3:AbortMultipartUpload",
       "s3:GetObject*",
       "s3:ListMultipartUploadParts*",
@@ -42,21 +42,23 @@ data "aws_iam_policy_document" "athena_task" {
       "${var.athena_s3_arn}/*",
     ]
 
-    sid       = "ReadWriteResultFiles"
+    sid = "ReadWriteResultFiles"
   }
 
   statement {
-    actions   = [
+    actions = [
       "s3:GetBucketLocation",
       "s3:ListBucket*",
     ]
 
     resources = [
-      "${var.athena_s3_arn}",
+      var.athena_s3_arn,
     ]
 
-    sid       = "ListObjects"
+    sid = "ListObjects"
   }
 }
 
-data "aws_region" "current" {}
+data "aws_region" "current" {
+}
+
