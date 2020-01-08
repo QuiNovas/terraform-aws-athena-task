@@ -9,7 +9,7 @@ module "athena_task" {
   dead_letter_arn = var.dead_letter_arn
   handler         = "function.handler"
   kms_key_arn     = var.kms_key_arn
-  l3_object_key   = "quinovas/athena-task/athena-task-0.0.2.zip"
+  l3_object_key   = "quinovas/athena-task/athena-task-0.0.3.zip"
   name            = "${var.name_prefix}athena-task"
 
   policy_arns = [
