@@ -13,7 +13,8 @@ module "athena_task" {
   name            = "${var.name_prefix}athena-task"
 
   policy_arns = [
-    aws_iam_policy.athena_task.arn,
+    "arn:aws:iam::aws:policy/AmazonAthenaFullAccess"
+    aws_iam_policy.non_default_staging_dir_access.arn,
     var.athena_datasource_policy_arn,
   ]
   runtime           = "python3.7"
@@ -22,8 +23,7 @@ module "athena_task" {
   version           = "3.0.1"
 }
 
-resource "aws_iam_policy" "athena_task" {
-  name   = "${var.name_prefix}athena-task"
-  policy = data.aws_iam_policy_document.athena_task.json
+resource "aws_iam_policy" "non_default_staging_dir_access" {
+  name   = "${var.name_prefix}appsync-athena-task-staging-s3-access"
+  policy = data.aws_iam_policy_document.non_default_staging_dir_access.json
 }
-

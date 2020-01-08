@@ -1,4 +1,4 @@
-variable "athena_s3_arn" {
+variable "athena_s3_staging_arn" {
   description = "S3 bucket arn that Athena will store the query results in"
   type        = string
 }
