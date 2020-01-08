@@ -17,10 +17,10 @@ module "athena_task" {
     aws_iam_policy.non_default_staging_dir_access.arn,
     var.athena_datasource_policy_arn,
   ]
-  runtime           = "python3.7"
-  source            = "QuiNovas/lambdalambdalambda/aws"
-  timeout           = 300
-  version           = "3.0.1"
+  runtime = "python3.7"
+  source  = "QuiNovas/lambdalambdalambda/aws"
+  timeout = 300
+  version = "3.0.1"
 }
 
 resource "aws_iam_policy" "non_default_staging_dir_access" {
