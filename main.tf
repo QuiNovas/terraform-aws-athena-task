@@ -10,6 +10,7 @@ module "athena_task" {
   handler         = "function.handler"
   kms_key_arn     = var.kms_key_arn
   l3_object_key   = "quinovas/athena-task/athena-task-0.0.3.zip"
+  memory_size     = var.memory_size
   name            = "${var.name_prefix}athena-task"
 
   policy_arns = [
@@ -19,7 +20,7 @@ module "athena_task" {
   ]
   runtime = "python3.7"
   source  = "QuiNovas/lambdalambdalambda/aws"
-  timeout = 300
+  timeout = var.timeout
   version = "3.0.1"
 }
 

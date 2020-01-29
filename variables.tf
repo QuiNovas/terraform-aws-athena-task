@@ -47,3 +47,14 @@ variable "poll_interval" {
   type        = string
 }
 
+variable "memory_size" {
+  default     = 128
+  description = "Memory size of the lambda resolver"
+  type        = number
+}
+
+variable "timeout" {
+  default     = 30
+  description = "Timeout of the lambda resolver"
+  type        = number
+}
