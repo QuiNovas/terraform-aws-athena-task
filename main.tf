@@ -21,7 +21,7 @@ module "athena_task" {
   runtime = "python3.7"
   source  = "QuiNovas/lambdalambdalambda/aws"
   timeout = var.timeout
-  version = "3.0.2"
+  version = "3.0.4"
 }
 
 resource "aws_iam_policy" "non_default_staging_dir_access" {
